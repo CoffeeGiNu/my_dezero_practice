@@ -1,0 +1,239 @@
+digraph g {
+2529657803152 [label="(1, 1000) float32", color=orange, style=filled]
+2529657803056 [label="Linear", color=lightblue, style=filled, shape=box]
+2529657802960 -> 2529657803056
+2529657430944 -> 2529657803056
+2529657431040 -> 2529657803056
+2529657803056 -> 2529657803152
+2529657802960 [label="(1, 4096) float32", color=orange, style=filled]
+2529657430944 [label="W: (4096, 1000) float32", color=orange, style=filled]
+2529657431040 [label="b: (1000,) float32", color=orange, style=filled]
+2529657790416 [label="Div", color=lightblue, style=filled, shape=box]
+2529657790320 -> 2529657790416
+2529657802864 -> 2529657790416
+2529657790416 -> 2529657802960
+2529657790320 [label="(1, 4096) float32", color=orange, style=filled]
+2529657802864 [label="() float32", color=orange, style=filled]
+2529657790128 [label="Mul", color=lightblue, style=filled, shape=box]
+2529657790032 -> 2529657790128
+2529657790224 -> 2529657790128
+2529657790128 -> 2529657790320
+2529657790032 [label="(1, 4096) float32", color=orange, style=filled]
+2529657790224 [label="(1, 4096) bool", color=orange, style=filled]
+2529657789936 [label="ReLU", color=lightblue, style=filled, shape=box]
+2529657789840 -> 2529657789936
+2529657789936 -> 2529657790032
+2529657789840 [label="(1, 4096) float32", color=orange, style=filled]
+2529657789744 [label="Linear", color=lightblue, style=filled, shape=box]
+2529657789648 -> 2529657789744
+2529657430512 -> 2529657789744
+2529657430800 -> 2529657789744
+2529657789744 -> 2529657789840
+2529657789648 [label="(1, 4096) float32", color=orange, style=filled]
+2529657430512 [label="W: (4096, 4096) float32", color=orange, style=filled]
+2529657430800 [label="b: (4096,) float32", color=orange, style=filled]
+2529657789456 [label="Div", color=lightblue, style=filled, shape=box]
+2529657789360 -> 2529657789456
+2529657789552 -> 2529657789456
+2529657789456 -> 2529657789648
+2529657789360 [label="(1, 4096) float32", color=orange, style=filled]
+2529657789552 [label="() float32", color=orange, style=filled]
+2529657789168 [label="Mul", color=lightblue, style=filled, shape=box]
+2529657789072 -> 2529657789168
+2529657789264 -> 2529657789168
+2529657789168 -> 2529657789360
+2529657789072 [label="(1, 4096) float32", color=orange, style=filled]
+2529657789264 [label="(1, 4096) bool", color=orange, style=filled]
+2529657788976 [label="ReLU", color=lightblue, style=filled, shape=box]
+2529657788880 -> 2529657788976
+2529657788976 -> 2529657789072
+2529657788880 [label="(1, 4096) float32", color=orange, style=filled]
+2529657788688 [label="Linear", color=lightblue, style=filled, shape=box]
+2529657788736 -> 2529657788688
+2529657430464 -> 2529657788688
+2529657430608 -> 2529657788688
+2529657788688 -> 2529657788880
+2529657788736 [label="(1, 25088) float32", color=orange, style=filled]
+2529657430464 [label="W: (25088, 4096) float32", color=orange, style=filled]
+2529657430608 [label="b: (4096,) float32", color=orange, style=filled]
+2529657788496 [label="Reshape", color=lightblue, style=filled, shape=box]
+2529657788544 -> 2529657788496
+2529657788496 -> 2529657788736
+2529657788544 [label="(1, 512, 7, 7) float32", color=orange, style=filled]
+2529657788448 [label="Pooling", color=lightblue, style=filled, shape=box]
+2529657788352 -> 2529657788448
+2529657788448 -> 2529657788544
+2529657788352 [label="(1, 512, 14, 14) float32", color=orange, style=filled]
+2529657788304 [label="ReLU", color=lightblue, style=filled, shape=box]
+2529657788256 -> 2529657788304
+2529657788304 -> 2529657788352
+2529657788256 [label="(1, 512, 14, 14) float32", color=orange, style=filled]
+2529657788064 [label="Conv2d", color=lightblue, style=filled, shape=box]
+2529657787968 -> 2529657788064
+2529657430272 -> 2529657788064
+2529657430368 -> 2529657788064
+2529657788064 -> 2529657788256
+2529657787968 [label="(1, 512, 14, 14) float32", color=orange, style=filled]
+2529657430272 [label="W: (512, 512, 3, 3) float32", color=orange, style=filled]
+2529657430368 [label="b: (512,) float32", color=orange, style=filled]
+2529657787920 [label="ReLU", color=lightblue, style=filled, shape=box]
+2529657787872 -> 2529657787920
+2529657787920 -> 2529657787968
+2529657787872 [label="(1, 512, 14, 14) float32", color=orange, style=filled]
+2529657787680 [label="Conv2d", color=lightblue, style=filled, shape=box]
+2529657787584 -> 2529657787680
+2529657405392 -> 2529657787680
+2529657430128 -> 2529657787680
+2529657787680 -> 2529657787872
+2529657787584 [label="(1, 512, 14, 14) float32", color=orange, style=filled]
+2529657405392 [label="W: (512, 512, 3, 3) float32", color=orange, style=filled]
+2529657430128 [label="b: (512,) float32", color=orange, style=filled]
+2529657787536 [label="ReLU", color=lightblue, style=filled, shape=box]
+2529657787488 -> 2529657787536
+2529657787536 -> 2529657787584
+2529657787488 [label="(1, 512, 14, 14) float32", color=orange, style=filled]
+2529657787200 [label="Conv2d", color=lightblue, style=filled, shape=box]
+2529657787248 -> 2529657787200
+2529657405152 -> 2529657787200
+2529657405248 -> 2529657787200
+2529657787200 -> 2529657787488
+2529657787248 [label="(1, 512, 14, 14) float32", color=orange, style=filled]
+2529657405152 [label="W: (512, 512, 3, 3) float32", color=orange, style=filled]
+2529657405248 [label="b: (512,) float32", color=orange, style=filled]
+2529657787152 [label="Pooling", color=lightblue, style=filled, shape=box]
+2529657787056 -> 2529657787152
+2529657787152 -> 2529657787248
+2529657787056 [label="(1, 512, 28, 28) float32", color=orange, style=filled]
+2529657787008 [label="ReLU", color=lightblue, style=filled, shape=box]
+2529657786960 -> 2529657787008
+2529657787008 -> 2529657787056
+2529657786960 [label="(1, 512, 28, 28) float32", color=orange, style=filled]
+2529657786768 [label="Conv2d", color=lightblue, style=filled, shape=box]
+2529657786672 -> 2529657786768
+2529657404912 -> 2529657786768
+2529657405008 -> 2529657786768
+2529657786768 -> 2529657786960
+2529657786672 [label="(1, 512, 28, 28) float32", color=orange, style=filled]
+2529657404912 [label="W: (512, 512, 3, 3) float32", color=orange, style=filled]
+2529657405008 [label="b: (512,) float32", color=orange, style=filled]
+2529657786624 [label="ReLU", color=lightblue, style=filled, shape=box]
+2529657786576 -> 2529657786624
+2529657786624 -> 2529657786672
+2529657786576 [label="(1, 512, 28, 28) float32", color=orange, style=filled]
+2529657716688 [label="Conv2d", color=lightblue, style=filled, shape=box]
+2529657716592 -> 2529657716688
+2529657404672 -> 2529657716688
+2529657404768 -> 2529657716688
+2529657716688 -> 2529657786576
+2529657716592 [label="(1, 512, 28, 28) float32", color=orange, style=filled]
+2529657404672 [label="W: (512, 512, 3, 3) float32", color=orange, style=filled]
+2529657404768 [label="b: (512,) float32", color=orange, style=filled]
+2529657716544 [label="ReLU", color=lightblue, style=filled, shape=box]
+2529657716496 -> 2529657716544
+2529657716544 -> 2529657716592
+2529657716496 [label="(1, 512, 28, 28) float32", color=orange, style=filled]
+2529657716208 [label="Conv2d", color=lightblue, style=filled, shape=box]
+2529657716256 -> 2529657716208
+2529657404432 -> 2529657716208
+2529657404528 -> 2529657716208
+2529657716208 -> 2529657716496
+2529657716256 [label="(1, 256, 28, 28) float32", color=orange, style=filled]
+2529657404432 [label="W: (512, 256, 3, 3) float32", color=orange, style=filled]
+2529657404528 [label="b: (512,) float32", color=orange, style=filled]
+2529657716160 [label="Pooling", color=lightblue, style=filled, shape=box]
+2529657716064 -> 2529657716160
+2529657716160 -> 2529657716256
+2529657716064 [label="(1, 256, 56, 56) float32", color=orange, style=filled]
+2529657716016 [label="ReLU", color=lightblue, style=filled, shape=box]
+2529657715968 -> 2529657716016
+2529657716016 -> 2529657716064
+2529657715968 [label="(1, 256, 56, 56) float32", color=orange, style=filled]
+2529657715776 [label="Conv2d", color=lightblue, style=filled, shape=box]
+2529657715680 -> 2529657715776
+2529657404192 -> 2529657715776
+2529657404288 -> 2529657715776
+2529657715776 -> 2529657715968
+2529657715680 [label="(1, 256, 56, 56) float32", color=orange, style=filled]
+2529657404192 [label="W: (256, 256, 3, 3) float32", color=orange, style=filled]
+2529657404288 [label="b: (256,) float32", color=orange, style=filled]
+2529657715632 [label="ReLU", color=lightblue, style=filled, shape=box]
+2529657715584 -> 2529657715632
+2529657715632 -> 2529657715680
+2529657715584 [label="(1, 256, 56, 56) float32", color=orange, style=filled]
+2529657715392 [label="Conv2d", color=lightblue, style=filled, shape=box]
+2529657715296 -> 2529657715392
+2529657403952 -> 2529657715392
+2529657404048 -> 2529657715392
+2529657715392 -> 2529657715584
+2529657715296 [label="(1, 256, 56, 56) float32", color=orange, style=filled]
+2529657403952 [label="W: (256, 256, 3, 3) float32", color=orange, style=filled]
+2529657404048 [label="b: (256,) float32", color=orange, style=filled]
+2529657715248 [label="ReLU", color=lightblue, style=filled, shape=box]
+2529657715200 -> 2529657715248
+2529657715248 -> 2529657715296
+2529657715200 [label="(1, 256, 56, 56) float32", color=orange, style=filled]
+2529657714960 [label="Conv2d", color=lightblue, style=filled, shape=box]
+2529657715008 -> 2529657714960
+2529657403760 -> 2529657714960
+2529657403856 -> 2529657714960
+2529657714960 -> 2529657715200
+2529657715008 [label="(1, 128, 56, 56) float32", color=orange, style=filled]
+2529657403760 [label="W: (256, 128, 3, 3) float32", color=orange, style=filled]
+2529657403856 [label="b: (256,) float32", color=orange, style=filled]
+2529657714912 [label="Pooling", color=lightblue, style=filled, shape=box]
+2529657714816 -> 2529657714912
+2529657714912 -> 2529657715008
+2529657714816 [label="(1, 128, 112, 112) float32", color=orange, style=filled]
+2529657714768 [label="ReLU", color=lightblue, style=filled, shape=box]
+2529657714096 -> 2529657714768
+2529657714768 -> 2529657714816
+2529657714096 [label="(1, 128, 112, 112) float32", color=orange, style=filled]
+2529657714576 [label="Conv2d", color=lightblue, style=filled, shape=box]
+2529657714480 -> 2529657714576
+2529657402272 -> 2529657714576
+2529657402464 -> 2529657714576
+2529657714576 -> 2529657714096
+2529657714480 [label="(1, 128, 112, 112) float32", color=orange, style=filled]
+2529657402272 [label="W: (128, 128, 3, 3) float32", color=orange, style=filled]
+2529657402464 [label="b: (128,) float32", color=orange, style=filled]
+2529657714336 [label="ReLU", color=lightblue, style=filled, shape=box]
+2529657714384 -> 2529657714336
+2529657714336 -> 2529657714480
+2529657714384 [label="(1, 128, 112, 112) float32", color=orange, style=filled]
+2529657712944 [label="Conv2d", color=lightblue, style=filled, shape=box]
+2529657714192 -> 2529657712944
+2529641470608 -> 2529657712944
+2529657401696 -> 2529657712944
+2529657712944 -> 2529657714384
+2529657714192 [label="(1, 64, 112, 112) float32", color=orange, style=filled]
+2529641470608 [label="W: (128, 64, 3, 3) float32", color=orange, style=filled]
+2529657401696 [label="b: (128,) float32", color=orange, style=filled]
+2529657712896 [label="Pooling", color=lightblue, style=filled, shape=box]
+2529657713472 -> 2529657712896
+2529657712896 -> 2529657714192
+2529657713472 [label="(1, 64, 224, 224) float32", color=orange, style=filled]
+2529657713904 [label="ReLU", color=lightblue, style=filled, shape=box]
+2529657713952 -> 2529657713904
+2529657713904 -> 2529657713472
+2529657713952 [label="(1, 64, 224, 224) float32", color=orange, style=filled]
+2529657713280 [label="Conv2d", color=lightblue, style=filled, shape=box]
+2529657712800 -> 2529657713280
+2529614502112 -> 2529657713280
+2529614550256 -> 2529657713280
+2529657713280 -> 2529657713952
+2529657712800 [label="(1, 64, 224, 224) float32", color=orange, style=filled]
+2529614502112 [label="W: (64, 64, 3, 3) float32", color=orange, style=filled]
+2529614550256 [label="b: (64,) float32", color=orange, style=filled]
+2529657651008 [label="ReLU", color=lightblue, style=filled, shape=box]
+2529657650864 -> 2529657651008
+2529657651008 -> 2529657712800
+2529657650864 [label="(1, 64, 224, 224) float32", color=orange, style=filled]
+2529657431136 [label="Conv2d", color=lightblue, style=filled, shape=box]
+2529657431328 -> 2529657431136
+2529575736848 -> 2529657431136
+2529614239536 -> 2529657431136
+2529657431136 -> 2529657650864
+2529657431328 [label="(1, 3, 224, 224) float32", color=orange, style=filled]
+2529575736848 [label="W: (64, 3, 3, 3) float32", color=orange, style=filled]
+2529614239536 [label="b: (64,) float32", color=orange, style=filled]
+}
